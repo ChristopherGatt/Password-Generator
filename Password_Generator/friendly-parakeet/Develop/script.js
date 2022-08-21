@@ -1,9 +1,16 @@
 // Assignment code here
 
 function generatePassword() {
-  var passwordLength = window.prompt("What should the password length be?");
+  var passwordLengthAsk = window.prompt("What should the password length be?");
 
-  console.log(passwordLength);
+  console.log(passwordLengthAsk);
+
+  var passwordLength = passwordLengthAsk;
+
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    window.alert("please input a number between 8 and 128");
+    return;
+  }
 
   return "generated password";
 }
