@@ -1,5 +1,10 @@
 // Assignment code here
+
 function generatePassword() {
+  var passwordLength = window.prompt("What should the password length be?");
+
+  console.log(passwordLength);
+
   return "generated password";
 }
 

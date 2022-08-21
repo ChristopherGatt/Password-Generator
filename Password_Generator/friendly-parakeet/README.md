@@ -4,7 +4,7 @@ First we create a function called 'generatePassword'
 
 now we create the criteria for the password
 
-We need to prompt for password length (between 8-128 characters)
+We need to prompt for password length (between 8-128 characters) using window.prompt
 
 We need to confirm if the password includes lowercase, uppercase, numeric, and/or special characters
 
