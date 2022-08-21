@@ -1,5 +1,17 @@
 // Assignment code here
 
+var passwordMaker = ["numbers", "upper case letters", "lower case letters", "Special characters"]
+
+function yesOrNo() = window.prompt(
+  "Should password include (passwordMaker[0])? (Y = Yes, N = No)");
+  if (yesOrNo === Y) yesOrNo = true;
+  else if ((yesOrNo = N)) yesOrNo = false;
+  else {
+    window.alert("Please enter either Y (yes) or N (no)");
+    return;
+  }
+}
+
 function generatePassword() {
   var passwordLengthAsk = window.prompt("What should the password length be?");
 
@@ -11,6 +23,28 @@ function generatePassword() {
     window.alert("please input a number between 8 and 128");
     return;
   }
+
+  functio = window.prompt(
+    "Should password include numbers? (Y = Yes, N = No)"
+
+    var numbersInPasswordAsk = numbersInPassword
+  );
+
+  var numbersInPassword = yesOrNo();
+
+  var lowerCaseInPasswordAsk = window.prompt(
+    "Should password include lower case letters? (Y = Yes, N = No)"
+  );
+
+  var upperCaseInPasswordAsk = window.prompt(
+    "Should password include upper case letters? (Y = Yes, N = No)"
+  );
+
+  var specialCharactersInPassword = window.prompt(
+    "Should password include special characters? (Y = Yes, N = No)"
+  );
+
+  console.log(numbersInPassword);
 
   return "generated password";
 }
