@@ -10,7 +10,7 @@ function randomNumber(x, y) {
 }
 
 function randomType(select) {
-  return select[randomNumber(0, list.length - 1)];
+  // return select[randomNumber(0, list.length - 1)];
 }
 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -75,22 +75,14 @@ var upperCase = [
   "Z",
 ];
 
-var nothing = "Invalid Password";
-
-var passwordMake = [];
-
 function generatePassword() {
+  var passwordMake = [];
+
   var passwordLengthAsk = window.prompt("What should the password length be?");
 
   console.log(passwordLengthAsk);
 
   var passwordLength = parseInt(passwordLengthAsk);
-
-  for (var i = 0; i < passwordLength; i++) {
-    var randomList = randomType(passwordMake);
-    var randomChar = randomType(randomList);
-    generatePassword += randomChar;
-  }
 
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     window.alert("please input a number between 8 and 128");
@@ -99,46 +91,67 @@ function generatePassword() {
 
   var numbersInPassword = window.confirm("Should password include numbers?");
 
-  if (numbersInPassword === true) {
+  if (numbersInPassword) {
     passwordMake.push(numbers);
-    return;
   }
+
+  console.log(passwordMake);
 
   var symbolsInPassword = window.confirm("Should password include symbols?");
 
-  if (symbolsInPassword === true) {
+  if (symbolsInPassword) {
     passwordMake.push(symbols);
-    return;
   }
+
+  console.log(passwordMake);
 
   var upperCaseAsk = window.confirm(
     "Should password include upper case letters?"
   );
 
-  if (upperCaseAsk === true) {
+  if (upperCaseAsk) {
     passwordMake.push(upperCase);
-    return;
   }
+
+  console.log(passwordMake);
 
   var lowerCaseAsk = window.confirm(
     "Should password include lower case letters?"
   );
 
-  if (lowerCaseAsk === true) {
+  if (lowerCaseAsk) {
     passwordMake.push(lowerCase);
+  }
+
+  console.log(passwordMake);
+
+  if (passwordMake.length === 0) {
+    alert("Select at least 1 type");
     return;
   }
 
-  if (passwordMake.length === 0) {
-    passwordMake.push(nothing);
-  }
-}
+  console.log(passwordMake);
 
-console.log(passwordMake);
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * passwordMake.length);
+    // console.log(randomIndex);
+    // console.log(passwordMake[randomIndex]);
+    var randomIndex2 = Math.floor(
+      Math.random() * passwordMake[randomIndex].length
+    );
+
+    console.log(passwordMake[randomIndex][randomIndex2]);
+  }
+
+  const finalPassword = passwordMake[randomIndex][randomIndex2];
+
+  return finalPassword;
+}
 
 //var generatePassword = "";
 
 var generateBtn = document.querySelector("#generate");
+console.log(generateBtn);
 
 // Write password to the #password input
 function writePassword() {
