@@ -16,4 +16,6 @@ make sure all prompts are answered
 
 create a random number function
 
-Then password is generated, We need to create a return function to do this
+Now create a Loop function
+
+Then password is generated, We need to create a return function
